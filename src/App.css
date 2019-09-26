@@ -1,22 +1,112 @@
+body {
+  background: #8e8e8e;
+}
+
 .App {
+  background: #777;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+  color: #333;
+}
+
+.navbar {
+  padding: 10px 20px;
   text-align: center;
+  background: #eee;
 }
 
-.App-logo {
-  height: 40vmin;
+.navbar h1 {
+  margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shopping-list {
+  margin: 20px;
 }
 
-.App-link {
-  color: #09d3ac;
+.shopping-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.shopping-list li {
+  display: inline-block;
+  background: #eee;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.shopping-list li:hover {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+.edit-inputs input[type="text"] {
+  display: inline-block;
+  border-right: solid black 1px;
+  width: 30%;
+  background: #eee;
+  color: #333;
+}
+
+.edit-inputs button {
+  display: inline-block;
+  border: 0;
+  background: #eee;
+  margin: 10px;
+  padding: 10px;
+}
+
+.shopping-list .item{
+  margin: 5px 15px;
+}
+
+.shopping-list .item-name {
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.shopping-list .item-entity {
+  display: inline-block;
+  font-size: 0.9em;
+  color: #3f3f3f;
+}
+
+.shopping-list .delete {
+  font-weight: bold;
+  padding: 0 3px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* empty */
+
+form {
+  padding: 20px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px 0;
+  background: #5f5f5f;
+  color: #fff;
+  border: 0;
+}
+
+input[type="submit"] {
+  margin: 10px auto;
+  background: #eee;
+  border: 0;
+  padding: 6px 20px;
+  display: block;
+}
+
+::placeholder {
+  color: #fff;
 }
