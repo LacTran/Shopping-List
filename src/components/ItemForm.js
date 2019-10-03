@@ -36,11 +36,11 @@ const ItemForm = () => {
             />
             <input type="submit" value="Add Item" />
             {errors.itemName && errors.itemName.type === 'required' && <p>Item's name is required</p>}
-            {/* {errors.itemName && errors.itemName.type === 'minLength' && <p>Item's name has minimum length of 2</p>}
-            {errors.itemName && errors.itemName.type === 'maxLength' && <p>Item's name has maximum length of 20</p>} */}
+            {errors.itemName && errors.itemName.type === 'minLength' && <p>Item's name has minimum length of 2</p>}
+            {errors.itemName && errors.itemName.type === 'maxLength' && <p>Item's name has maximum length of 20</p>}
             {errors.itemEntity && errors.itemEntity.type === 'required' && <p>Item's entity is required</p>}
-            {/* {errors.itemEntity && errors.itemEntity.type === 'min' && <p>Item's entity has minimum value of 1</p>}
-            {errors.itemEntity && errors.itemEntity.type === 'max' && <p>Item's entity has minimum value of 50</p>} */}
+            {errors.itemEntity && errors.itemEntity.type === 'min' && <p>Item's entity has minimum value of 1</p>}
+            {errors.itemEntity && errors.itemEntity.type === 'max' && <p>Item's entity has minimum value of 50</p>}
         </form>
     );
 };

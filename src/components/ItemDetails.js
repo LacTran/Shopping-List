@@ -14,7 +14,7 @@ const ItemDetails = ({ item }) => {
         <li className="item">
             <div className="item-feature item-name" onDoubleClick={changeEditMode}>{item.name}</div>
             <div className="item-feature item-entity" onDoubleClick={changeEditMode}>{item.entity}</div>
-            <button className="delete" onClick={() => removeItem(item.id)}>x</button>
+            <button className="delete" onClick={() => removeItem(item.id)}>X</button>
         </li>
     );
 };

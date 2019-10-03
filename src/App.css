@@ -70,8 +70,9 @@ body {
   border: 0;
   background: #eee;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 
@@ -104,12 +105,11 @@ body {
 
 .shopping-list .delete {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.9rem; 
   padding: 15px 5px;
   box-sizing: border-box;
   margin: 5px 10px;
   cursor: pointer;
-  height: 80%;
 }
 
 /* empty */
