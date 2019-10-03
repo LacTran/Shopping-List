@@ -31,11 +31,14 @@ const ItemContextProvider = (props) => {
         setItems([...newItems, editedItem])
     }
 
-    const randomItemNameList = ['Apple', 'Banana', 'Burger', 'Bags', 'Amplifier', 'Car', 'Hotdog', 'Ghost', 'House', 'Chocolate', 'Ruler', 'Tape', 'Laptop', 'Kiwi', 'Watermelon']
+    
+
 
     useEffect(() => {
         // Math.floor(Math.random() * (max - min + 1) + min)
         // let k in Math.floor(Math.random() * 15 + 1)
+        const randomItemNameList = ['Apple', 'Banana', 'Burger', 'Bags', 'Amplifier', 'Car', 'Hotdog', 'Ghost', 'House', 'Chocolate', 'Ruler', 'Tape', 'Laptop', 'Kiwi', 'Watermelon']
+        console.log(randomItemNameList)
         for (let i = 0; i < (Math.floor(Math.random() * 9 + 5)); i++) {
 
             // let randomItem = { name: randomName, entity: randomEntity }
@@ -48,7 +51,7 @@ const ItemContextProvider = (props) => {
             // addItem(randomName, randomEntity)
             console.log(items)
         }
-    }, [items])
+    })
 
     return (
         <ItemContext.Provider value={{ items, setItems, isInEditMode, setEditMode, addItem, removeItem, editedItem, getEditedItem, saveEditedItem }}>

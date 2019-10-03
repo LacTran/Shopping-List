@@ -16,6 +16,22 @@ body {
   background: #eee;
 }
 
+.navbar-logo {
+  width: 33%;
+  display: inline-block;
+}
+
+.navbar-title {
+  display: inline-block;
+  width: 66%;
+}
+
+.navbar-title h1 {
+  position: absolute;
+  margin: 0 auto;
+  transform: translateY(-150%)
+}
+
 .navbar h1 {
   margin: 10px 0;
 }
@@ -30,16 +46,37 @@ body {
 }
 
 .shopping-list li {
-  display: inline-block;
+  display: block;
   background: #eee;
   border-radius: 4px;
   padding: 10px;
   margin: 10px 0;
 }
 
+.item-name, .item-entity, .delete {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: 2rem;
+  padding: 3px;
+  margin: 1px;
+}
+
+.item-name{
+  width: 60%;
+  text-align: center;
+}
+
+.item-entity{
+  width:30%;
+  text-align: center;
+}
+
+.delete{
+}
+
 .shopping-list li:hover {
   opacity: 0.7;
-  text-decoration: line-through;
 }
 
 .edit-inputs input[type="text"] {
@@ -58,7 +95,7 @@ body {
   padding: 10px;
 }
 
-.shopping-list .item{
+.shopping-list .item {
   margin: 5px 15px;
 }
 

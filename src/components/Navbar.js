@@ -6,7 +6,12 @@ const Navbar = () => {
     const { items } = useContext(ItemContext)
     return (
         <div className="navbar">
-            <h1>My Shopping List</h1>
+            <div className="navbar-logo">
+                <img src="https://source.unsplash.com/random/100x100" alt="Logo"/>
+            </div>
+            <div className="navbar-title">
+                <h1>My Shopping List</h1>
+            </div>
             <p>You have {items.length} items on shopping list </p>
         </div>
     );
