@@ -12,8 +12,8 @@ const ItemDetails = ({ item }) => {
 
     return (
         <li className="item">
-            <div className="item-name" onDoubleClick={changeEditMode}>{item.name}</div>
-            <div className="item-entity" onDoubleClick={changeEditMode}>{item.entity}</div>
+            <div className="item-feature item-name" onDoubleClick={changeEditMode}>{item.name}</div>
+            <div className="item-feature item-entity" onDoubleClick={changeEditMode}>{item.entity}</div>
             <button className="delete" onClick={() => removeItem(item.id)}>x</button>
         </li>
     );

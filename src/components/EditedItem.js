@@ -31,7 +31,7 @@ const EditedItem = ({ item }) => {
                 ref={theNameInput}
             />
             <input
-                type="text"
+                type="number"
                 defaultValue={item.entity}
                 ref={theEntityInput}
             />

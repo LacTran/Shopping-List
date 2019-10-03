@@ -53,33 +53,11 @@ body {
   margin: 10px 0;
 }
 
-.item-name, .item-entity, .delete {
-  display: inline-block;
-  box-sizing: border-box;
-  border: 1px solid black;
-  height: 2rem;
-  padding: 3px;
-  margin: 1px;
-}
-
-.item-name{
-  width: 60%;
-  text-align: center;
-}
-
-.item-entity{
-  width:30%;
-  text-align: center;
-}
-
-.delete{
-}
-
 .shopping-list li:hover {
   opacity: 0.7;
 }
 
-.edit-inputs input[type="text"] {
+.edit-inputs input[type="text"], .edit-inputs input[type="number"] {
   display: inline-block;
   border-right: solid black 1px;
   width: 30%;
@@ -93,31 +71,45 @@ body {
   background: #eee;
   margin: 10px;
   padding: 10px;
+  cursor: pointer;
 }
 
+
 .shopping-list .item {
-  margin: 5px 15px;
+  margin: 10px 15px;
+  min-height: 3rem;
+}
+
+.shopping-list .item-feature {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: center;
+  padding: 15px 0;
+  box-sizing: border-box;
+  font-size: 0.9rem;
 }
 
 .shopping-list .item-name {
-  display: inline-block;
+  width: 60%;
   margin-right: 15px;
   font-weight: bold;
   color: #333;
-  font-size: 1.2em;
 }
 
 .shopping-list .item-entity {
-  display: inline-block;
-  font-size: 0.9em;
+  width: 30%;
   color: #3f3f3f;
 }
 
 .shopping-list .delete {
   font-weight: bold;
-  padding: 0 3px;
-  margin: 10px;
+  font-size: 1.2rem;
+  padding: 15px 5px;
+  box-sizing: border-box;
+  margin: 5px 10px;
   cursor: pointer;
+  height: 80%;
 }
 
 /* empty */
@@ -126,22 +118,42 @@ form {
   padding: 20px;
 }
 
-input[type="text"], input[type="number"] {
-  width: 100%;
-  padding: 10px;
+form h1 {
+  color: #eee;
+}
+
+input {
+  display: inline-block;
+  padding: 10px 20px;
   box-sizing: border-box;
-  margin: 6px 0;
+  margin: 5px;
+}
+
+input[type=text], input[type=number] {
   background: #5f5f5f;
   color: #fff;
   border: 0;
 }
 
-input[type="submit"] {
-  margin: 10px auto;
+input[type=text] {
+  width: 50%;
+}
+
+input[type=number] {
+  width: 20%
+}
+
+input[type=submit] {
+  width: 20%;
   background: #eee;
   border: 0;
-  padding: 6px 20px;
-  display: block;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid black;
 }
 
 ::placeholder {

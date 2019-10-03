@@ -31,27 +31,24 @@ const ItemContextProvider = (props) => {
         setItems([...newItems, editedItem])
     }
 
-    
+
 
 
     useEffect(() => {
         // Math.floor(Math.random() * (max - min + 1) + min)
-        // let k in Math.floor(Math.random() * 15 + 1)
         const randomItemNameList = ['Apple', 'Banana', 'Burger', 'Bags', 'Amplifier', 'Car', 'Hotdog', 'Ghost', 'House', 'Chocolate', 'Ruler', 'Tape', 'Laptop', 'Kiwi', 'Watermelon']
-        console.log(randomItemNameList)
+        let newItems = [];
+        // console.log(randomItemNameList[Math.floor(Math.random() * 15 + 1)]) //random name in product lists
         for (let i = 0; i < (Math.floor(Math.random() * 9 + 5)); i++) {
-
-            // let randomItem = { name: randomName, entity: randomEntity }
-            let randomName, randomEntity
-
-            for (let k in Math.floor(Math.random() * 15 + 1)) {
-                randomName = randomItemNameList[k]
-                randomEntity = Math.floor(Math.random() * 50 + 1) // from 1-50
-            }
-            // addItem(randomName, randomEntity)
-            console.log(items)
+            newItems.push({
+                name: randomItemNameList[Math.floor(Math.random() * 15)], //random product name
+                entity: Math.floor(Math.random() * 50 + 1), // random entity from 1-50
+                id: uuid()
+            })
+            console.log(newItems)
         }
-    })
+        setItems([...newItems])
+    }, [])
 
     return (
         <ItemContext.Provider value={{ items, setItems, isInEditMode, setEditMode, addItem, removeItem, editedItem, getEditedItem, saveEditedItem }}>
