@@ -1,20 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ItemContext } from '../contexts/ItemContext';
 import useForm from 'react-hook-form';
 
 const ItemForm = () => {
     const { register, handleSubmit, errors, reset } = useForm();
     const { addItem } = useContext(ItemContext);
-    const [name, setName] = useState('')
-    const [entity, setEntity] = useState('')
-    const onSubmit = (e) => {
-        e.preventDefault();
-        addItem(name, entity);
-        // setName('');
-        // setEntity('');
+    const onSubmit = (data) => {
+        addItem(data.itemName, data.itemEntity);
         reset({
             itemName: "",
-            itemEntity: 0
+            itemEntity: ""
         });
     }
     return (
@@ -23,16 +18,12 @@ const ItemForm = () => {
             <input
                 type="text"
                 placeholder="Item name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 name="itemName"
                 ref={register({ required: true, minLength: 2, maxLength: 20 })}
             />
             <input
                 type="number"
                 placeholder="Item entity"
-                value={entity}
-                onChange={(e) => setEntity(e.target.value)}
                 name="itemEntity"
                 ref={register({ required: true, min: 1, max: 50 })}
             />
