@@ -3,17 +3,19 @@ import { ItemContext } from '../contexts/ItemContext';
 import useForm from 'react-hook-form';
 
 const ItemForm = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors, reset } = useForm();
     const { addItem } = useContext(ItemContext);
     const [name, setName] = useState('')
     const [entity, setEntity] = useState('')
-
     const onSubmit = (e) => {
         e.preventDefault();
         addItem(name, entity);
-
-        setName('');
-        setEntity('');
+        // setName('');
+        // setEntity('');
+        reset({
+            itemName: "",
+            itemEntity: 0
+        });
     }
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
