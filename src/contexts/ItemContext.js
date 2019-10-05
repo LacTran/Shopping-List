@@ -45,7 +45,6 @@ const ItemContextProvider = (props) => {
                 entity: Math.floor(Math.random() * 50 + 1), // random entity from 1-50
                 id: uuid()
             })
-            console.log(newItems)
         }
         setItems([...newItems])
     }, [])

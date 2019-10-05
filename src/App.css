@@ -65,7 +65,7 @@ body {
   color: #333;
 }
 
-.edit-inputs button {
+.edit-inputs button, .edit-inputs input[type="submit"] {
   display: inline-block;
   border: 0;
   background: #eee;
@@ -74,7 +74,6 @@ body {
   cursor: pointer;
   box-sizing: border-box;
 }
-
 
 .shopping-list .item {
   margin: 10px 15px;
@@ -105,7 +104,7 @@ body {
 
 .shopping-list .delete {
   font-weight: bold;
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
   padding: 15px 5px;
   box-sizing: border-box;
   margin: 5px 10px;
