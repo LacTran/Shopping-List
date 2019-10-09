@@ -1,7 +1,7 @@
 body {
   background: #8e8e8e;
 }
-
+/* 
 .App {
   background: #777;
   margin: 20px auto;
@@ -111,8 +111,6 @@ body {
   cursor: pointer;
 }
 
-/* empty */
-
 form {
   padding: 20px;
 }
@@ -157,4 +155,4 @@ input:focus {
 
 ::placeholder {
   color: #fff;
-}
+} */
