@@ -5,7 +5,7 @@ import useForm from 'react-hook-form';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
-const Form = styled.div``;
+const Form = styled.form``;
 
 const FormInput = styled.input`
     display: inline-block;
@@ -82,8 +82,7 @@ const EditedItem = ({ item, history }) => {
                 name="itemEntity"
             />
             <CancelButton type="button" onClick={changeEditMode}>X</CancelButton>
-            {/* <ConfirmButton type="submit" value="OK" /> */}
-            <input type="submit" value="OK" />
+            <ConfirmButton type="submit" value="OK" />
             {errors.itemName && errors.itemName.type === 'required' && <p>Item's name is required</p>}
             {errors.itemName && errors.itemName.type === 'minLength' && <p>Item's name has minimum length of 2</p>}
             {errors.itemName && errors.itemName.type === 'maxLength' && <p>Item's name has maximum length of 20</p>}

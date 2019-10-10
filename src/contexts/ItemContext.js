@@ -24,13 +24,18 @@ const ItemContextProvider = (props) => {
     }
 
     const saveEditedItem = (editedItem) => {
-        var newItems = items.filter(item => {
-            return item.id !== editedItem.id
+        // var newItems = items.filter(item => {
+        //     return item.id !== editedItem.id
+        // })
+        // setItems([...newItems, editedItem])
+
+        // var newItems = items.map(item => item === editedItem ? item.id === editedItem.id : item)
+        var newItems = items.map(item => {
+            return item.id === editedItem.id ? editedItem : item;
         })
+        // console.log(newItems)
 
-        // var newItems = items.map(item => editedItem ? item.id == editedItem.id : item)
-
-        setItems([...newItems, editedItem])
+        setItems([...newItems])
     }
 
 

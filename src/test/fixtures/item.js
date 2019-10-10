@@ -1,5 +1,5 @@
 export const FAKE_ITEM_NAME = 'FAKE_ITEM_NAME';
-export const FAKE_ITEM_ENTITY = 'FAKE_ITEM_ENTITY';
+export const FAKE_ITEM_ENTITY = '2';
 export const FAKE_ITEM_LIST = [
     {
         name: 'Banana',

@@ -55,7 +55,7 @@ const ItemForm = () => {
         });
     }
     return (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} data-testid="item-form-submit">
             <FormHeading>Add new products</FormHeading>
             <FormInput
                 type="text"
@@ -69,7 +69,7 @@ const ItemForm = () => {
                 name="itemEntity"
                 ref={register({ required: true, min: 1, max: 50 })}
             />
-            <FormSubmitInput type="submit" value="Add Item" />
+            <FormSubmitInput  type="submit" value="Add Item" />
             {errors.itemName && errors.itemName.type === 'required' && <p>Item's name is required</p>}
             {errors.itemName && errors.itemName.type === 'minLength' && <p>Item's name has minimum length of 2</p>}
             {errors.itemName && errors.itemName.type === 'maxLength' && <p>Item's name has maximum length of 20</p>}

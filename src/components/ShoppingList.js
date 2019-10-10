@@ -28,7 +28,7 @@ const ShoppingList = () => {
                 :
                 <Route path="/" exact>
                     <ShoppingListWrapper>
-                        <ShoppingListUl>
+                        <ShoppingListUl data-testid="shopping-list-ul">
                             {items.map((item, key) => {
                                 return <ItemDetails item={item} key={key} />
                             })}
