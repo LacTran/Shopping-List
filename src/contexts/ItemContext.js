@@ -53,7 +53,7 @@ const ItemContextProvider = (props) => {
 
         // ---FUNCTIONAL---
         // const newItemArray = new Array(Math.floor(Math.random() * 9 + 5));  // newItemArray.lenth = random
-        // const newItemArray = [...Array(Math.floor(Math.random() * 11 + 5))] // newItemArray[0] = {0: undefined}
+        // const newItemArray = [...Array(Math.floor(Math.random() * 11 + 5))] // newItemArray[0] = {0: undefined, ... }
         newItems = [...Array(Math.floor(Math.random() * 11 + 5))].map((item) => {
             item = Object.assign({}, {
                 name: randomItemNameList[Math.floor(Math.random() * 15)],

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ItemContext } from '../contexts/ItemContext';
 
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const ListedItem = styled.li`
     display: block;
@@ -47,15 +47,15 @@ const DeleteButton = styled.button`
     cursor: pointer;
 `;
 
-const ItemDetails = ({ item }) => {
-
+const ItemDetails = (props) => {
+    const { item, history } = props
     const { removeItem, setEditMode, getEditedItem } = useContext(ItemContext)
 
     const changeEditMode = () => {
         setEditMode(true);
-        getEditedItem(item)
+        getEditedItem(item);
+        history.push(`/edit-item/${item.id}`)
     }
-
     return (
         <ListedItem>
             <ItemNameWrapper onDoubleClick={changeEditMode}>{item.name}</ItemNameWrapper>
@@ -65,4 +65,4 @@ const ItemDetails = ({ item }) => {
     );
 };
 
-export default ItemDetails;
+export default withRouter(ItemDetails);

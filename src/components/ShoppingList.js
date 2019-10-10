@@ -17,15 +17,14 @@ const ShoppingListUl = styled.ul`
 
 const ShoppingList = () => {
     const { items, isInEditMode, editedItem } = useContext(ItemContext);
-
     return (
         <Switch>
             {isInEditMode ?
-                <Route path="/edit-item" component={EditedItem} />
-                //     <ShoppingListUl>
-                //         <EditedItem item={editedItem} />
-                //     </ShoppingListUl> 
-                // </Route>
+                <Route path="/edit-item/:id" >
+                    <ShoppingListUl>
+                        <EditedItem item={editedItem} />
+                    </ShoppingListUl>
+                </Route>
                 :
                 <Route path="/" exact>
                     <ShoppingListWrapper>
