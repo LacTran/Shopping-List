@@ -50,9 +50,9 @@ const CancelButton = styled.button`
     }
 `;
 
-const EditedItem = ({ item, history }) => {
+const EditedItem = ({ history }) => {
     const { register, handleSubmit, errors } = useForm();
-    const { setEditMode, saveEditedItem } = useContext(ItemContext);
+    const { setEditMode, saveEditedItem, editedItem } = useContext(ItemContext);
     const changeEditMode = () => {
         setEditMode(false);
         history.push('/');
@@ -61,7 +61,7 @@ const EditedItem = ({ item, history }) => {
         let newItem = {
             name: data.itemName,
             entity: data.itemEntity,
-            id: item.id
+            id: editedItem.id
         }
         saveEditedItem(newItem);
         setEditMode(false);
@@ -71,13 +71,13 @@ const EditedItem = ({ item, history }) => {
         <Form onSubmit={handleSubmit(handleSaveEditedItem)}>
             <FormInput
                 type="text"
-                defaultValue={item.name}
+                defaultValue={editedItem.name}
                 ref={register({ required: true, minLength: 2, maxLength: 20 })}
                 name="itemName"
             />
             <FormInput
                 type="number"
-                defaultValue={item.entity}
+                defaultValue={editedItem.entity}
                 ref={register({ required: true, min: 1, max: 50 })}
                 name="itemEntity"
             />

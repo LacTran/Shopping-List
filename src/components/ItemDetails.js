@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ItemContext } from '../contexts/ItemContext';
 
 import styled from 'styled-components';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const ListedItem = styled.li`
     display: block;

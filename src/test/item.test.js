@@ -28,20 +28,36 @@ it('user adds item on submitting the form', () => {
 })
 
 
+it('should the add button be hit', () => {
+    const { getByTestId } = render(<ItemForm />, { wrapper: ItemContextProvider });
+    const onSubmit = jest.fn(e => e.preventDefault());
+    act(() => {
+        fireEvent.click(getByTestId('item-form-submit'))
+    })
+    // expect(getByTestId('item-form')).toHaveBeenCalled();
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+})
+
+
 it('should add new item to the list', () => {
-    function wrapper({children}) {
+    function wrapper({ children }) {
         return <Router><ItemContextProvider>{children}</ItemContextProvider></Router>
     }
     const { getByText, getByPlaceholderText, queryByText, getByTestId, rerender } = render(<><ShoppingList /><ItemForm /></>, { wrapper });
-    const shoppingListCount = getByTestId("shopping-list-ul").childNodes.length;
+    const shoppingListCount = getByTestId("shopping-list-ul").childElementCount;
+    const obSubmit = jest.fn(e => e.preventDefault());
+    getByTestId('item-form-submit').dispatchEvent(new MouseEvent('click'));
     act(() => {
         userEvent.type(getByPlaceholderText('Item name'), FAKE_ITEM_NAME)
         userEvent.type(getByPlaceholderText('Item entity'), FAKE_ITEM_ENTITY)
-        fireEvent.submit(getByTestId('item-form-submit'));
+        userEvent.click(getByTestId('item-form-submit').closest('button'))
+        // fireEvent.submit(getByTestId('item-form'));
         // fireEvent.submit(getByTestId('submit'));
         // fireEvent.submit()
     })
     // rerender();
     // console.log(getByTestId("shopping-list-ul").lastElementChild.innerHTML)
-    expect(getByTestId("shopping-list-ul").childNodes.length).toBe(shoppingListCount + 1)
+    console.log(getByTestId("shopping-list-ul").childElementCount)
+    expect(obSubmit).toHaveBeenCalled();
+    expect(getByTestId("shopping-list-ul").childElementCount).toBe(shoppingListCount + 1)
 })
